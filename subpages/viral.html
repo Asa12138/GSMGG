@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Viral Genomes – Greenland Soil Microbiome Resource</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <style>
+      .highlight-number {
+        font-weight: bold;
+        color: #dc3545;
+      }
+    </style>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="/assets/js/components.js" defer></script>
+  </head>
+
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- 页面标题区 -->
+    <section class="page-header py-5 bg-light">
+      <div class="container">
+        <h1 class="display-5 fw-bold text-center">Viral Genomes – GSMGG</h1>
+        <p class="lead mt-3 text-center">
+          3,130 viral genomes identified from Greenlandic soil samples
+        </p>
+      </div>
+    </section>
+
+    <!-- 主要内容区 -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row mb-5">
+          <!-- 描述文字和主图区域 -->
+          <div class="col-lg-6 description-col">
+            <h2>Viral Genomes Overview</h2>
+
+            <div class="stats-highlight">
+              <p>
+                We identified
+                <span class="highlight-number">3,130 viral genomes</span> from
+                Greenlandic soil samples, with
+                <span class="highlight-number">931 genomes</span> containing
+                complete direct terminal repeat structures representing fully
+                assembled genomes. The virome of Greenland showed minimal
+                similarity to known viruses, with
+                <span class="highlight-number">less than 1%</span> sharing an
+                ANI of >95% with viruses in the IMG/VR and Global Soil Virome
+                datasets, positioning Greenland as a reservoir of novel viral
+                entities.
+              </p>
+            </div>
+
+            <p>
+              Most classified viruses belonged to the
+              <span class="highlight-number">Uroviricota phylum (98.6%)</span>,
+              primarily consisting of double-stranded DNA phages.
+              Protein-sharing network analysis classified viruses to the family
+              level, with the majority belonging to
+              <span class="highlight-number">Chaseviridae (26.2%)</span>,
+              <span class="highlight-number">Mesyanzhinovviridae (10.1%)</span>,
+              and <span class="highlight-number">Peduoviridae (3.5%)</span>.
+            </p>
+
+            <p>
+              Host prediction analyses indicated that these viruses primarily
+              target bacteria within the
+              <span class="highlight-number">Proteobacteria (33.8%)</span>,
+              <span class="highlight-number">Actinobacteriota (27.5%)</span>,
+              and
+              <span class="highlight-number">Firmicutes (15.1%)</span> phyla.
+              The paucity of eukaryotic viruses was notable, with merely two
+              potential eukaryotic viruses detected.
+            </p>
+
+            <p>
+              Greenlandic viruses represent a largely unexplored viral diversity
+              with significant implications for microbial ecology and
+              biogeochemical cycling.
+            </p>
+          </div>
+
+          <!-- 主图预留位置 -->
+          <div class="col-lg-6">
+            <div class="main-figure">
+              <br /><br />
+              <img
+                src="/data/2.ex_virus.png"
+                alt="Viral genome size distribution"
+                class="img-fluid"
+              />
+              <figcaption class="text-center mt-2">
+                An example of Greenlandic viral genomes
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- 关键特征展示 -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <h3>Key Genomic Features</h3>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <div class="card-body text-center">
+                    <h4 class="text-primary">76</h4>
+                    <p class="mb-0">Average genes per genome</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <div class="card-body text-center">
+                    <h4 class="text-primary">52 kb</h4>
+                    <p class="mb-0">Average contig size</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <div class="card-body text-center">
+                    <h4 class="text-primary">68.4%</h4>
+                    <p class="mb-0">Virulent lifestyle prediction</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 mb-5">
+          <a
+            href="/subpages/download.html"
+            class="btn btn-lg btn btn-lg btn-success"
+            >Download Viral Data</a
+          >
+        </div>
+
+        <!-- Viral Genomes浏览器 -->
+        <h2>Viral Genomes Browser</h2>
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h5 class="mb-0">Viral Genome Information</h5>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <div class="btn-group" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    id="resetFilters"
+                  >
+                    <i class="fas fa-filter"></i> Reset Filters
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    id="exportCSV"
+                  >
+                    <i class="fas fa-download"></i> Export CSV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table
+                class="table table-striped table-hover mb-0"
+                id="viralTable"
+              >
+                <thead>
+                  <tr>
+                    <th>Virus ID</th>
+                    <th>Length</th>
+                    <th>Topology</th>
+                    <th>Genes</th>
+                    <th>Virus Score</th>
+                    <th>Hallmark Genes</th>
+                    <th>Marker Enrichment</th>
+                    <th>Taxonomy</th>
+                    <th>Completeness</th>
+                    <th>CheckV Quality</th>
+                    <th>PhaTYP</th>
+                    <th>Class</th>
+                    <th>vContact Family</th>
+                    <th>PhageCNN Family</th>
+                    <th>Anti-CRISPR</th>
+                    <th>tRNA Number</th>
+                    <th>Host Phylum</th>
+                    <th>CRISPR</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 数据将通过JavaScript动态加载 -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <!-- 引入脚本 -->
+    <script src="viral/1.viral_table.js"></script>
+  </body>
+</html>

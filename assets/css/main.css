@@ -1,0 +1,408 @@
+/* Hover 展开 dropdown（桌面端） */
+@media (min-width: 992px) {
+
+  /* lg 断点以上 */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    margin-top: 0;
+    /* 紧贴导航栏 */
+  }
+
+  .dropdown-toggle::after {
+    transition: transform 0.3s;
+  }
+
+  .nav-item.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* 可选：防止点击时也展开（如果只想 hover） */
+.nav-item.dropdown .dropdown-toggle {
+  pointer-events: none;
+  /* 禁用点击，但不推荐，除非你有其他处理 */
+}
+
+/* 基础卡片样式（已有的可以保留或覆盖） */
+.stat-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  /* 默认轻阴影 */
+  transition: all 0.3s ease;
+  /* 平滑过渡核心 */
+  cursor: pointer;
+  /* 鼠标手型提示可点击 */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* 轻微边框，可选 */
+  overflow: hidden;
+  /* 防止内容溢出 */
+}
+
+/* Hover 动画 */
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.06);
+  /* 向上抬 + 轻微放大 */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  /* 阴影明显增强 */
+  background: rgba(255, 255, 255, 1);
+  /* 变纯白，更突出（可选） */
+}
+
+/* 可选：图标在 hover 时也加点动画 */
+.stat-card:hover .feature-icon {
+  transform: scale(1.15);
+  /* 图标放大 */
+  color: #0d6efd;
+  /* 变蓝（Bootstrap 主色，可改） */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 防止文字被选中时难看 */
+.stat-card:active {
+  transform: translateY(-4px) scale(1.03);
+  /* 点击时稍缩小，模拟按下 */
+}
+
+.stat-card h3 {
+  min-height: 3.2rem;
+  /* 假设两行的高度 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0rem;
+}
+
+.stat-card p {
+  min-height: 3rem;
+  /* 描述文字也预留高度 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+footer {
+  background: #343a40;
+  color: #ddd;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: #0d6efd;
+}
+
+.hero {
+  /* 你的图片路径 - 请确认文件真的在 assets/img/ 下面 */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)),
+    url('/assets/img/hero-greenland.jpg');
+  /* ← 改成你的真实文件名 */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  /* fixed 可能导致手机端问题，先改成 scroll 测试 */
+
+  /* 高度控制：更紧凑 */
+  padding: 90px 0 0px;
+  /* 上90px + 下70px，总高度约 300-400px */
+  min-height: 45vh;
+  /* 手机上至少占屏幕 45% */
+
+  color: white;
+  position: relative;
+}
+
+/* 增强文字可读性 */
+.hero h1,
+.hero .lead,
+.hero p {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+/* 手机适配 */
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 0 50px;
+    min-height: 40vh;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+}
+
+.page-header {
+  padding-top: 3rem !important;
+  /* 增加顶部内边距 */
+  margin-top: 1rem;
+  /* 可选：增加顶部外边距 */
+  padding-bottom: 0.5rem !important;
+}
+
+.page-footer {
+  padding-top: 0.5rem !important;
+  /* 增加顶部内边距 */
+  padding-bottom: 0.5rem !important;
+  /* 增加顶部内边距 */
+}
+
+/* 保留原有样式 */
+.download-card {
+  transition: transform 0.2s;
+  height: 100%;
+}
+
+.download-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.data-size {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.contact-card {
+  transition: transform 0.2s;
+  height: 100%;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.affiliation {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.email-link {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+/* 主图样式 */
+.main-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-figure img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* 统计高亮样式 */
+.stats-highlight {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.highlight-number {
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+/* 表格容器样式 */
+.dataTables_wrapper {
+  margin-top: 20px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .description-col {
+    margin-bottom: 30px;
+  }
+}
+
+.sankey-container {
+  width: 100%;
+  height: 550px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* 添加iframe样式修复 */
+iframe {
+  pointer-events: auto !important;
+}
+
+/* 图片浮动样式 */
+.img-float {
+  float: left;
+  /* 图片向左浮动 */
+  margin: 0 20px 20px 0;
+  /* 右和下边距 */
+  shape-outside: margin-box;
+  /* 文字环绕形状 */
+  max-width: 30%;
+  /* 限制图片最大宽度 */
+  height: auto;
+  /* 保持宽高比 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .img-float {
+    float: none;
+    /* 小屏幕取消浮动 */
+    display: block;
+    margin: 0 auto 20px;
+    /* 居中显示 */
+    max-width: 60%;
+    /* 增大图片占比 */
+  }
+}
+
+/* 清除浮动影响 */
+.text-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* BGC ID链接样式 */
+.bgc-id-link {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.bgc-id-link:hover {
+  color: #0a58ca;
+  background-color: #e9ecef;
+  text-decoration: underline;
+}
+
+.bgc-id-link.active {
+  color: #fff;
+  background-color: #0d6efd;
+}
+
+/* antiSMASH容器样式 */
+.antismash-container {
+  min-height: 400px;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  background: #f8f9fa;
+}
+
+.antismash-result {
+  height: 100%;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.taxa-link {
+  color: #198754;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.taxa-link:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.taxid-badge {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: monospace;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* 优化表格宽度 */
+#plantsTable {
+  width: 100% !important;
+  table-layout: auto;
+}
+
+/* 确保列宽自适应 */
+#plantsTable th,
+#plantsTable td {
+  min-width: 120px;
+  max-width: 300px;
+}
+
+/* 分类列特殊样式 */
+.classification-col {
+  min-width: 150px;
+  max-width: 200px;
+}
+
+/* 优化表格宽度 */
+#bgcsTable {
+  width: 100% !important;
+  table-layout: auto;
+}
+
+
+.functional-category {
+  border-left: 4px solid #0d6efd;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+.category-icon {
+  font-size: 1.5rem;
+  color: #0d6efd;
+  margin-right: 10px;
+}
+
+.novelty-badge {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.gene-feature {
+  background-color: #e7f3ff;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}

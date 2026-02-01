@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Download - Greenland Soil Microbiome Resource</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/components.js"></script>
+  </head>
+
+  <body>
+    <!-- 替换原来的 navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h1 class="display-5 fw-bold">Data & Code Availability</h1>
+            <p class="lead">
+              Access the complete dataset and analysis tools from the Greenland
+              Soil Microbiome Project
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Download Content -->
+    <section class="py-5">
+      <div class="container">
+        <!-- Data Availability Notice -->
+        <div class="alert alert-info mb-5">
+          <h4 class="alert-heading">
+            <i class="bi bi-info-circle"></i> Data Access Information
+          </h4>
+          <p class="mb-0">
+            Metagenome, 16S rDNA sequencing, assembly, and MAG data have been
+            deposited at the
+            <a
+              href="https://www.ebi.ac.uk/ena/browser/view/PRJEB88872"
+              target="_blank"
+              >ENA database (PRJEB88872)</a
+            >
+            and the
+            <a
+              href="https://db.cngb.org/data_resources/project/CNP0007079/"
+              target="_blank"
+              >China National GeneBank DataBase (CNP0007079)</a
+            >. All data and codes are publicly available as of the date of
+            publication.
+          </p>
+        </div>
+
+        <!-- Download Cards Grid -->
+        <div class="row g-4">
+          <!-- Metagenomic Sequencing Data -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card download-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-primary bg-opacity-10 p-3 rounded me-3">
+                    <i class="bi bi-database text-primary fs-2"></i>
+                  </div>
+                  <div>
+                    <h5 class="card-title mb-0">Metagenomic Sequencing Data</h5>
+                    <span class="data-size">~10.4 Tbp</span>
+                  </div>
+                </div>
+                <p class="card-text flex-grow-1">
+                  Raw metagenomic sequencing data from 283 active-layer soil
+                  samples across 64 Greenland sites.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    href="https://www.ebi.ac.uk/ena/browser/view/PRJEB88872"
+                    class="btn btn-primary me-2"
+                    target="_blank"
+                    >ENA</a
+                  >
+                  <a
+                    href="https://db.cngb.org/data_resources/project/CNP0007079/"
+                    class="btn btn-outline-primary"
+                    target="_blank"
+                    >CNGBdb</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Assembly Data -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card download-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-success bg-opacity-10 p-3 rounded me-3">
+                    <i class="bi bi-puzzle text-success fs-2"></i>
+                  </div>
+                  <div>
+                    <h5 class="card-title mb-0">Assembly Data</h5>
+                    <span class="data-size">~125 GB</span>
+                  </div>
+                </div>
+                <p class="card-text flex-grow-1">
+                  Metagenomic assembly data including contigs and scaffolds from
+                  the sequencing data.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    href="https://www.ebi.ac.uk/ena/browser/view/PRJEB88872"
+                    class="btn btn-success me-2"
+                    target="_blank"
+                    >ENA</a
+                  >
+                  <a
+                    href="https://db.cngb.org/data_resources/project/CNP0007079/"
+                    class="btn btn-outline-success"
+                    target="_blank"
+                    >CNGBdb</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 16S rRNA Sequencing Data -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card download-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-info bg-opacity-10 p-3 rounded me-3">
+                    <i class="bi bi-braces text-info fs-2"></i>
+                  </div>
+                  <div>
+                    <h5 class="card-title mb-0">16S rRNA Sequencing Data</h5>
+                    <span class="data-size">83.8 million</span>
+                  </div>
+                </div>
+                <p class="card-text flex-grow-1">
+                  16S rRNA gene amplicon sequencing data for microbial community
+                  structure analysis.
+                </p>
+                <div class="mt-auto">
+                  <a
+                    href="https://www.ebi.ac.uk/ena/browser/view/PRJEB88872"
+                    class="btn btn-info me-2"
+                    target="_blank"
+                    >ENA</a
+                  >
+                  <a
+                    href="https://db.cngb.org/data_resources/project/CNP0007079/"
+                    class="btn btn-outline-info"
+                    target="_blank"
+                    >CNGBdb</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAGs Data -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card download-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-warning bg-opacity-10 p-3 rounded me-3">
+                    <img
+                      src="/assets/icons/bacteria.svg"
+                      alt="Bacteria icon"
+                      width="40"
+                      height="55"
+                    />
+                  </div>
+                  <div>
+                    <h5 class="card-title mb-0">
+                      Metagenome-Assembled Genomes
+                    </h5>
+                    <span class="data-size">5,307 MAGs</span>
+                  </div>
+                </div>
+                <p class="card-text flex-grow-1">
+                  High- and medium-quality metagenome-assembled genomes from
+                  Greenland soil samples.
+                </p>
+                <div class="mt-auto">
+                  <a href="/subpages/mags.html" class="btn btn-warning me-2"
+                    >Browse MAGs</a
+                  >
+                  <a
+                    href="https://db.cngb.org/data_resources/project/CNP0007079/"
+                    class="btn btn-outline-warning"
+                    target="_blank"
+                    >CNGBdb</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Viral Genomes -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card download-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-danger bg-opacity-10 p-3 rounded me-3">
+                    <i class="bi bi-virus text-danger fs-2"></i>
+                  </div>
+                  <div>
+                    <h5 class="card-title mb-0">Viral Genomes</h5>
+                    <span class="data-size">3,130 genomes</span>
+                  </div>
+                </div>
+                <p class="card-text flex-grow-1">
+                  Viral genomes identified through large-scale virome profiling
+                  and virus-host linkages.
+                </p>
+                <div class="mt-auto">
+                  <a href="/subpages/viral.html" class="btn btn-danger me-2"
+                    >Browse Viruses</a
+                  >
+                  <a
+                    href="https://doi.org/10.5281/zenodo.18449917"
+                    class="btn btn-outline-danger"
+                    target="_blank"
+                    >Zenodo</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Non-redundant Genes -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card download-card h-100">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-secondary bg-opacity-10 p-3 rounded me-3">
+                    <img
+                      src="/assets/icons/DNA.svg"
+                      alt="DNA icon"
+                      width="40"
+                      height="55"
+                    />
+                  </div>
+                  <div>
+                    <h5 class="card-title mb-0">Non-redundant Genes</h5>
+                    <span class="data-size">468 million genes</span>
+                  </div>
+                </div>
+                <p class="card-text flex-grow-1">
+                  Comprehensive gene catalog representing the functional
+                  potential of Greenland soil microbiomes.
+                </p>
+                <div class="mt-auto">
+                  <a href="/subpages/genes.html" class="btn btn-secondary me-2"
+                    >Browse Genes</a
+                  >
+                  <a
+                    href="https://db.cngb.org/data_resources/project/CNP0007079/"
+                    class="btn btn-outline-secondary"
+                    target="_blank"
+                    >CNGBdb</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analysis Tools Section -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header bg-light">
+                <h4 class="mb-0">
+                  <i class="bi bi-tools"></i> Analysis Tools & Code
+                </h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  All original code for analyses and developed tools are
+                  available through the following repositories:
+                </p>
+
+                <div class="row mt-4">
+                  <div class="col-md-6">
+                    <h5>Analysis Code Repository</h5>
+                    <p>
+                      Complete codebase for data processing and analysis
+                      presented in the study.
+                    </p>
+                    <a
+                      href="https://github.com/Asa12138"
+                      class="btn btn-dark"
+                      target="_blank"
+                    >
+                      <i class="bi bi-github"></i> GitHub Repository
+                    </a>
+                  </div>
+
+                  <div class="col-md-6">
+                    <h5>Developed Tools</h5>
+                    <ul class="list-unstyled">
+                      <li class="mb-2">
+                        <i class="bi bi-link-45deg"></i>
+                        <a
+                          href="https://github.com/Asa12138/pctax"
+                          target="_blank"
+                          class="text-decoration-none"
+                        >
+                          <strong>pctax</strong> </a
+                        >: Microbial taxonomy analysis
+                      </li>
+                      <li class="mb-2">
+                        <i class="bi bi-link-45deg"></i>
+                        <a
+                          href="https://github.com/Asa12138/MetaNet"
+                          target="_blank"
+                          class="text-decoration-none"
+                        >
+                          <strong>MetaNet</strong> </a
+                        >: Multi-omics network analysis
+                      </li>
+                      <li class="mb-2">
+                        <i class="bi bi-link-45deg"></i>
+                        <a
+                          href="https://github.com/Asa12138/ReporterScore"
+                          target="_blank"
+                          class="text-decoration-none"
+                        >
+                          <strong>ReporterScore</strong> </a
+                        >: Functional enrichment analysis
+                      </li>
+                      <li class="mb-2">
+                        <i class="bi bi-link-45deg"></i>
+                        <a
+                          href="https://github.com/Asa12138/iCRISPR"
+                          target="_blank"
+                          class="text-decoration-none"
+                        >
+                          <strong>iCRISPR</strong> </a
+                        >: CRISPR system analysis
+                      </li>
+                      <li class="mb-2">
+                        <i class="bi bi-link-45deg"></i>
+                        <a
+                          href="https://github.com/Asa12138/BGCkit"
+                          target="_blank"
+                          class="text-decoration-none"
+                        >
+                          <strong>BGCkit</strong> </a
+                        >: Biosynthetic gene cluster analysis
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="alert alert-warning">
+              <h5>
+                <i class="bi bi-question-circle"></i> Additional Information
+              </h5>
+              <p class="mb-0">
+                Any additional information required to reanalyze the data
+                reported in this paper is available from the
+                <a href="/subpages/contact.html">lead contact</a> upon request.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 替换原来的 footer -->
+    <div id="footer-placeholder"></div>
+  </body>
+</html>

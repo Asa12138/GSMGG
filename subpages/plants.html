@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plants – Greenland Soil Microbiome Resource</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="/assets/js/components.js" defer></script>
+  </head>
+
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- 页面标题区 -->
+    <section class="page-header py-5 bg-light">
+      <div class="container">
+        <h1 class="display-5 fw-bold text-center">
+          Plants – Greenland Soil Microbiome Resource
+        </h1>
+      </div>
+    </section>
+
+    <!-- 主要内容区 -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row mb-5">
+          <!-- 描述文字和主图区域 -->
+          <div class="col-lg-6">
+            <h2>Plant Taxa Identification</h2>
+
+            <div class="stats-highlight">
+              <p>
+                We integrated a comprehensive plant genome database and
+                identified
+                <span class="highlight-number">32 potential plant taxa</span>
+                (Family to Class level) from metagenomic data.
+              </p>
+            </div>
+
+            <p>
+              <span class="association-badge">Methodology</span> The
+              identification was performed using advanced metagenomic analysis
+              techniques that allow detection of plant DNA fragments in soil
+              samples, providing insights into historical and contemporary
+              vegetation patterns.
+            </p>
+
+            <p>
+              The identified plant taxa represent a diverse range of Arctic and
+              sub-Arctic vegetation, including woody plants, herbaceous species,
+              and cryptogams that are characteristic of Greenlandic ecosystems.
+            </p>
+
+            <p>
+              These plant-derived DNA signatures provide valuable information
+              about:
+            </p>
+            <ul>
+              <li>
+                Historical vegetation changes in response to climate
+                fluctuations
+              </li>
+              <li>Current plant community composition and diversity</li>
+              <li>Potential plant-fungal symbiotic relationships</li>
+              <li>Carbon input sources to soil organic matter pools</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6">
+            <h3>Sunburst Diagram Visualization</h3>
+            <div class="sankey-container" style="width: 100%; height: 100%">
+              <!-- 使用iframe嵌入桑基图 -->
+              <iframe
+                src="plants/1.plants_sangji.html"
+                frameborder="0"
+                style="width: 100%; height: 100%"
+                allow="pointer-events"
+              ></iframe>
+            </div>
+            <figcaption class="text-center mt-2">
+              Cas type numbers of CRISPR-Cas systems in MAGs
+            </figcaption>
+          </div>
+        </div>
+
+        <!-- CRISPRs浏览器 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h5 class="mb-0">Plant Taxonomic Classification</h5>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <div class="btn-group" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    id="resetFilters"
+                  >
+                    <i class="fas fa-filter"></i> Reset Filters
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    id="exportCSV"
+                  >
+                    <i class="fas fa-download"></i> Export CSV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body p-0">
+            <div class="table-container">
+              <table
+                class="table table-striped table-hover mb-0"
+                id="plantsTable"
+              >
+                <thead>
+                  <tr>
+                    <th>Taxa</th>
+                    <th>Taxid</th>
+                    <th class="classification-col">Kingdom</th>
+                    <th class="classification-col">Phylum</th>
+                    <th class="classification-col">Class</th>
+                    <th class="classification-col">Order</th>
+                    <th class="classification-col">Family</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 数据将通过JavaScript动态加载 -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <!-- 引入脚本 -->
+    <script src="plants/1.plant_table.js"></script>
+  </body>
+</html>

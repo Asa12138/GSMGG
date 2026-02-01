@@ -1,0 +1,47 @@
+
+
+#map { height: 500px; width: 500px; border-radius: 12px; }
+
+/* 图例整体容器 */
+.info.legend {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 14px;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* 标题 */
+.legend-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #333;
+}
+
+/* 每一行 */
+.legend-row {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+}
+
+/* 颜色方块（关键！） */
+.info.legend i {
+    width: 18px;
+    height: 18px;
+    background-color: #ccc;           /* 默认色，实际会被 inline style 覆盖 */
+    margin-right: 10px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* 文字 */
+.legend-row span {
+    color: #444;
+}

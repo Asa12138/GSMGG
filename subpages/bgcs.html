@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BGCs – Greenland Soil Microbiome Resource</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="/assets/js/components.js" defer></script>
+  </head>
+
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- 页面标题区 -->
+    <section class="page-header py-5 bg-light">
+      <div class="container">
+        <h1 class="display-5 fw-bold text-center">
+          Biosynthetic Gene Clusters (BGCs)
+        </h1>
+      </div>
+    </section>
+
+    <!-- 主要内容区 -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row mb-5">
+          <!-- 描述文字 -->
+          <div class="col-lg-6">
+            <h2>BGCs Overview</h2>
+
+            <div class="stats-highlight">
+              <p>
+                Using antiSMASH, we identified
+                <span class="highlight-number"
+                  >14,592 biosynthetic gene clusters (BGCs)</span
+                >
+                across <span class="highlight-number">3,600 MAGs</span>,
+                encompassing seven major BGC classes. The most abundant classes
+                were <span class="highlight-number">NRPS</span>, constituting
+                <span class="highlight-number">25.36%</span> of the total,
+                followed by terpene-related at
+                <span class="highlight-number">21.25%</span>.
+              </p>
+            </div>
+
+            <p>
+              The phyla rich in BGC included
+              <span class="highlight-number">Myxococcota</span> (~6 BGCs per
+              genome) and
+              <span class="highlight-number">Cyanobacteria</span> (~5 BGCs per
+              genome). BiG-SCAPE analysis clustered
+              <span class="highlight-number">6,165 BGCs</span> into
+              <span class="highlight-number">1,761 gene cluster families</span>
+              and <span class="highlight-number">8,427 singletons</span>.
+              Notably, the majority (<span class="highlight-number">99.3%</span
+              >) of biosynthetic gene clusters (BGCs) did not cluster with
+              reference BGCs from the MIBiG database, and
+              <span class="highlight-number">99.5%</span> remained unclustered
+              with BGCs from the global metagenomic BGC Atlas. This suggests a
+              vast reservoir of untapped BGC diversity in Greenlandic soils,
+              highlighting their potential as a unique source of novel bioactive
+              compounds.
+            </p>
+          </div>
+
+          <!-- 主图预留位置 -->
+          <div class="col-lg-6">
+            <div class="main-figure">
+              <br /><br /><br />
+              <img
+                src="/data/6.bgc.jpg"
+                alt="BGC class distribution in Greenlandic soils"
+                class="img-fluid"
+              />
+              <figcaption class="text-center mt-4">
+                Distribution of BGC classes across Greenlandic MAGs
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- BGCs浏览器 -->
+        <h2>BGCs Browser</h2>
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h5 class="mb-0">BGC Class Counts</h5>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <div class="btn-group" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    id="resetFilters"
+                  >
+                    <i class="fas fa-filter"></i> Reset Filters
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    id="exportCSV"
+                  >
+                    <i class="fas fa-download"></i> Export CSV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table
+                class="table table-striped table-hover mb-0"
+                id="bgcsTable"
+              >
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th class="bgc-type-header">NRPS</th>
+                    <th class="bgc-type-header">Terpene</th>
+                    <th class="bgc-type-header">Others</th>
+                    <th class="bgc-type-header">RiPPs</th>
+                    <th class="bgc-type-header">Other PKSs</th>
+                    <th class="bgc-type-header">PKS-NRP Hybrids</th>
+                    <th class="bgc-type-header">PKSI</th>
+                    <th class="bgc-type-header">Saccharides</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 数据将通过JavaScript动态加载 -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 修改后的antiSMASH result部分 -->
+        <div class="row mb-10">
+          <div class="col-12">
+            <h3>antiSMASH result</h3>
+            <div class="antismash-container" id="antismash-container">
+              <!-- 动态内容将在这里显示 -->
+              <div class="text-center py-5 bg-light">
+                <i class="fas fa-mouse-pointer fa-3x text-muted mb-3"></i>
+                <p class="text-muted">
+                  Please click on the ID in the table to view the corresponding
+                  antiSMASH results
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <!-- 引入脚本 -->
+    <script src="bgcs/1.bgc_table.js"></script>
+  </body>
+</html>

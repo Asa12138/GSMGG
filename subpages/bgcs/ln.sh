@@ -1,4 +1,6 @@
+# 这个对网站展示可能无效，本地有效
 # 进入你的bgcs目录
+# scpjq 
 cd ~/Documents/R/GSMGG/subpages/bgcs/
 
 # 为每个MAG文件夹创建软链接

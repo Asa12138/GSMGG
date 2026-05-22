@@ -82,7 +82,7 @@ def replace_html_paths(root_dir='bgcs'):
                     f.write(content)
                 
                 modified_files += 1
-                print(f"  ✓ 完成修改: {modifications} 处替换，原文件已备份为 {backup_file.name}")
+                # print(f"  ✓ 完成修改: {modifications} 处替换，原文件已备份为 {backup_file.name}")
             else:
                 print(f"  ○ 无需修改: 未找到需要替换的模式")
                 

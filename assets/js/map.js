@@ -1,9 +1,42 @@
-// Map Initialization
-const map = L.map('map').setView([72, -40], 3);
+// Map Initialization: WGS 84 / NSIDC Sea Ice Polar Stereographic North.
+const EPSG3413_BOUNDS = L.bounds([-4194304, -4194304], [4194304, 4194304]);
 
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-}).addTo(map);
+const epsg3413 = new L.Proj.CRS(
+  'EPSG:3413',
+  '+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs',
+  {
+    origin: [-4194304, 4194304],
+    resolutions: [8192, 4096, 2048, 1024, 512],
+    bounds: EPSG3413_BOUNDS
+  }
+);
+
+const map = L.map('map', {
+  crs: epsg3413,
+  minZoom: 0,
+  maxZoom: 4
+}).setView([72, -40], 0);
+
+const gibsTileOptions = {
+  tileSize: 512,
+  minZoom: 0,
+  maxZoom: 4,
+  noWrap: true
+};
+
+L.tileLayer(
+  'https://gibs.earthdata.nasa.gov/wmts/epsg3413/best/BlueMarble_NextGeneration/default/default/500m/{z}/{y}/{x}.jpeg',
+  Object.assign({}, gibsTileOptions, {
+    attribution: 'Imagery © NASA GIBS'
+  })
+).addTo(map);
+
+L.tileLayer(
+  'https://gibs.earthdata.nasa.gov/wmts/epsg3413/best/Reference_Labels/default/default/250m/{z}/{y}/{x}.png',
+  Object.assign({}, gibsTileOptions, {
+    attribution: 'Labels © NASA GIBS / OSM contributors'
+  })
+).addTo(map);
 
 function getColor(perzone) {
   switch (perzone) {
@@ -26,6 +59,7 @@ fetch('/data/metatbl_with_coordinates.csv')
       skipEmptyLines: true,
       complete: function(results) {
         const sites = results.data;
+        const siteBounds = L.latLngBounds([]);
 
         sites.forEach(site => {
           if (!site.Latitude || !site.Longitude) return;
@@ -34,6 +68,8 @@ fetch('/data/metatbl_with_coordinates.csv')
           const lng = parseFloat(site.Longitude);
 
           if (isNaN(lat) || isNaN(lng)) return;
+
+          siteBounds.extend([lat, lng]);
 
           L.circleMarker([lat, lng], {
             color: 'black',
@@ -53,6 +89,10 @@ fetch('/data/metatbl_with_coordinates.csv')
               className: 'custom-tooltip'
             });
         });
+
+        if (siteBounds.isValid()) {
+          map.fitBounds(siteBounds, {padding: [24, 24]});
+        }
 
         console.log(`Successfully loaded ${sites.length} sampling sites`);
       },
